@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -17,7 +17,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   Locale _locale = const Locale('en');
 
-  void _changeLanguage(Locale locale) {
+  void _changeLanguage(Locale locale) { //دالة تغير اللغة
     setState(() {
       _locale = locale;
     });
@@ -33,17 +33,18 @@ class _MyAppState extends State<MyApp> {
         Locale('ar'),
       ],
       localizationsDelegates: const [
+        GlobalCupertinoLocalizations.delegate,
         GlobalMaterialLocalizations.delegate, // دعم النصوص الأساسية
         GlobalWidgetsLocalizations.delegate, // دعم عناصر الواجهة
         AppLocalizations.delegate, // دعم ملفاتك الخاصة
       ],
       home: HomeScreen(
-          onLanguageChange: _changeLanguage),// تمرير وظيفة تغيير اللغة
+          onLanguageChange: _changeLanguage), // تمرير وظيفة تغيير اللغة
     );
   }
 }
 
-class AppLocalizations {
+class AppLocalizations { //كلاس يستخدم لإدارة الترجمة
   final Locale locale;
 
   AppLocalizations(this.locale);
