@@ -17,7 +17,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   Locale _locale = const Locale('en');
 
-  void _changeLanguage(Locale locale) { //دالة تغير اللغة
+  void _changeLanguage(Locale locale) {
+    //دالة تغير اللغة
     setState(() {
       _locale = locale;
     });
@@ -44,7 +45,8 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-class AppLocalizations { //كلاس يستخدم لإدارة الترجمة
+class AppLocalizations {
+  //كلاس يستخدم لإدارة الترجمة
   final Locale locale;
 
   AppLocalizations(this.locale);
@@ -90,6 +92,7 @@ class _AppLocalizationsDelegate
   bool shouldReload(covariant LocalizationsDelegate old) => false;
 }
 
+//الشاشة الرئيسية
 class HomeScreen extends StatelessWidget {
   final Function(Locale) onLanguageChange;
 
