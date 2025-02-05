@@ -3,7 +3,9 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(
+
     ChangeNotifierProvider(
+      
       create: (_) => Counter(),
       child: MyApp(),
     ),
